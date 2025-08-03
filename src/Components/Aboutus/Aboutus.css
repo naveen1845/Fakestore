@@ -1,34 +1,48 @@
-/* AboutUs.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  --hm-red: #e50010;
+  --hm-gray: #666;
+  --hm-bg: #f9f9f9;
+}
+
 .about-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  padding: 3rem 2rem;
-  background: #f9f9f9;
-  gap: 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 4rem 2rem;
+  background: var(--hm-bg);
+  gap: 3rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .about-text {
   flex: 1;
   min-width: 300px;
   max-width: 600px;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
 }
 
 .about-text h1 {
-  font-size: 2.5rem;
-  color: #2c3e50;
-  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  color: var(--hm-red);
+  margin-bottom: 1.2rem;
+  font-weight: 600;
 }
 
 .about-text p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.7;
-  color: #555;
+  color: var(--hm-gray);
   margin-bottom: 1.2rem;
+  font-weight: 400;
 }
 
+/* Optional image section (if added later) */
 .about-image {
   flex: 1;
   min-width: 280px;
@@ -38,8 +52,8 @@
 
 .about-image img {
   max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* Responsive */
@@ -47,10 +61,15 @@
   .about-container {
     flex-direction: column;
     align-items: center;
+    padding: 2rem 1rem;
     text-align: center;
   }
 
   .about-text h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .about-text {
+    padding: 1.5rem;
   }
 }

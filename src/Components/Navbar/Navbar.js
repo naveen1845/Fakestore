@@ -1,3 +1,4 @@
+// src/Navbar.js
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
@@ -9,13 +10,8 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 10);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -25,42 +21,18 @@ const Navbar = () => {
       <div className="navbar__brand">
         <Link to="/" className="navbar__logo">ApniDukaan</Link>
       </div>
-      
-      <button 
-        className="navbar__menu-toggle" 
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        aria-label="Toggle menu"
-      >
-        {mobileMenuOpen ? '✕' : '☰'}
-      </button>
-      
+
       <nav className={`navbar__links ${mobileMenuOpen ? 'active' : ''}`}>
-        <Link 
-          to="/" 
-          data-text="Home"
-          className={location.pathname === '/' ? 'active' : ''}
-        >
+        <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
           Home
         </Link>
-        <Link 
-          to="/products" 
-          data-text="Products"
-          className={location.pathname === '/products' ? 'active' : ''}
-        >
+        <Link to="/products" className={location.pathname === '/products' ? 'active' : ''}>
           Products
         </Link>
-        <Link 
-          to="/aboutus" 
-          data-text="About us"
-          className={location.pathname === '/aboutus' ? 'active' : ''}
-        >
+        <Link to="/aboutus" className={location.pathname === '/aboutus' ? 'active' : ''}>
           About us
         </Link>
-        <Link 
-          to="/contactus" 
-          data-text="Contact us"
-          className={location.pathname === '/contactus' ? 'active' : ''}
-        >
+        <Link to="/contactus" className={location.pathname === '/contactus' ? 'active' : ''}>
           Contact us
         </Link>
       </nav>

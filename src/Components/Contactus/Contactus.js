@@ -4,7 +4,7 @@ import './Contactus.css';
 const Contact = () => {
   return (
     <div className="contact-container">
-      <h1>Contact Us</h1>
+      <h1>Get in Touch</h1>
       <p>We’d love to hear from you! Reach out to us anytime.</p>
 
       <div className="contact-details">
@@ -20,7 +20,11 @@ const Contact = () => {
 
         <div className="contact-item">
           <h3>🏢 Address</h3>
-          <p>123, Market Lane<br />Bangalore, Karnataka<br />India - 560001</p>
+          <p>
+            123, Market Lane<br />
+            Bangalore, Karnataka<br />
+            India - 560001
+          </p>
         </div>
       </div>
     </div>
